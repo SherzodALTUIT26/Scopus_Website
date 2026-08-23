@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCOPOS — AI Copilot for Call Centers</title>
+  <title>SCOPOS — Screen-Aware AI Assistant</title>
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +31,7 @@
 
     /* ─── Nav ──────────────────────────────────────── */
     nav {
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
       position: fixed;
       top: 0;
       left: 0;
@@ -43,6 +44,12 @@
       background: rgba(247,236,224,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(43,28,20,0.08);
+    
+    }
+
+    nav.scrolled {
+      padding: 12px 32px;
+      box-shadow: 0 4px 20px rgba(43,28,20,0.08);
     }
 
     .nav-left {
@@ -52,6 +59,7 @@
     }
 
     .nav-logo {
+      transition: transform 0.2s ease;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -61,6 +69,11 @@
       letter-spacing: 0.5px;
       color: var(--black);
       text-decoration: none;
+    
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
     }
 
     .nav-logo img {
@@ -74,7 +87,21 @@
       color: var(--gray);
       text-decoration: none;
       transition: color 0.15s;
+      position: relative;
     }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--brand);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after { width: 100%; }
 
     .nav-link:hover { color: var(--black); }
 
@@ -94,10 +121,12 @@
       justify-content: center;
       color: var(--black);
       flex-shrink: 0;
-      transition: border-color 0.15s, transform 0.15s;
+      transition: all 0.3s ease;
     }
 
-    .nav-icon-btn:hover { border-color: var(--brand); transform: translateY(-1px); }
+    .nav-icon-btn:hover { border-color: var(--brand);
+      transform: translateY(-2px) rotate(5deg);
+      box-shadow: 0 4px 12px rgba(168,70,31,0.2); }
 
     .nav-cta {
       display: inline-flex;
@@ -111,12 +140,12 @@
       font-weight: 500;
       text-decoration: none;
       white-space: nowrap;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: all 0.3s ease;
     }
 
     .nav-cta:hover {
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(168,70,31,0.35);
+      box-shadow: 0 6px 20px rgba(168,70,31,0.4);
     }
 
     /* ─── Hero ─────────────────────────────────────── */
@@ -143,6 +172,14 @@
       flex-direction: column;
       animation: floaty 6s ease-in-out infinite;
       will-change: transform;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .scatter:hover {
+      animation-play-state: paused;
+      transform: scale(1.05) rotate(0deg) !important;
+      box-shadow: 0 20px 50px rgba(43,28,20,0.25);
+      z-index: 10;
     }
 
     @keyframes floaty {
@@ -187,6 +224,7 @@
     }
 
     .hero-content {
+      animation: fadeInUp 0.8s ease;
       position: relative;
       z-index: 10;
       text-align: center;
@@ -201,6 +239,7 @@
       margin-bottom: 20px;
       letter-spacing: -2px;
       color: var(--brand);
+      animation: fadeInUp 0.8s ease 0.2s both;
     }
 
     .hero-sub {
@@ -208,9 +247,11 @@
       color: var(--gray);
       margin-bottom: 36px;
       line-height: 1.5;
+      animation: fadeInUp 0.8s ease 0.4s both;
     }
 
     .hero-buttons {
+      animation: fadeInUp 0.8s ease 0.6s both;
       display: flex;
       gap: 12px;
       justify-content: center;
@@ -228,7 +269,28 @@
       font-size: 15px;
       font-weight: 500;
       text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
       transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-dark::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .btn-dark:hover::before {
+      width: 300px;
+      height: 300px;
     }
 
     .btn-dark:hover {
@@ -248,15 +310,32 @@
       font-size: 15px;
       font-weight: 500;
       text-decoration: none;
+      transition: all 0.3s ease;
       transition: border-color 0.15s;
     }
 
-    .btn-outline:hover { border-color: var(--brand); }
+    .btn-outline:hover {
+      border-color: var(--brand);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(168,70,31,0.15);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .hero-note {
       margin-top: 14px;
       font-size: 12px;
       color: var(--gray);
+      animation: fadeInUp 0.8s ease 0.8s both;
     }
 
     /* ─── Video Demo ───────────────────────────────── */
@@ -274,10 +353,12 @@
       overflow: hidden;
       background: #111;
       position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 24px 80px rgba(43,28,20,0.18);
     }
 
-    .demo-video video {
+    .demo-video iframe {
+      border: none;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -297,6 +378,14 @@
       gap: 60px;
       align-items: center;
       margin-bottom: 100px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .feature-row.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .feature-row.reverse { direction: rtl; }
@@ -319,6 +408,7 @@
     .feature-visual {
       aspect-ratio: 4 / 3;
       border-radius: 16px;
+      transition: all 0.3s ease;
       overflow: hidden;
       background: var(--white);
       border: 1px solid var(--light-gray);
@@ -327,6 +417,12 @@
       justify-content: center;
       font-size: 13px;
       color: var(--gray);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-visual:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 40px rgba(43,28,20,0.15);
     }
 
     .feature-visual img {
@@ -361,6 +457,14 @@
       font-weight: 500;
     }
 
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 800px;
+    }
+
     .partner-card {
       display: inline-flex;
       align-items: center;
@@ -369,6 +473,14 @@
       background: var(--bg);
       border: 1px solid var(--light-gray);
       border-radius: 16px;
+      transition: all 0.3s ease;
+    
+    }
+
+    .partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(43,28,20,0.12);
+      border-color: var(--brand);
     }
 
     .partner-logo {
@@ -469,8 +581,21 @@
       .scatter { display: none; }
       .feature-row { grid-template-columns: 1fr; gap: 32px; }
       .feature-row.reverse { direction: ltr; }
-      nav { padding: 12px 16px; }
-      .nav-link { display: none; }
+      nav { padding: 12px 16px; 
+    }
+
+    nav.scrolled {
+      padding: 12px 32px;
+      box-shadow: 0 4px 20px rgba(43,28,20,0.08);
+    }
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
+      .nav-link { display: none; 
+    }
+
+    nav.scrolled {
+      padding: 12px 32px;
+      box-shadow: 0 4px 20px rgba(43,28,20,0.08);
+    }
       .footer-top { flex-direction: column; text-align: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
@@ -488,10 +613,10 @@
       <a href="#demo" class="nav-link">demo</a>
     </div>
     <div class="nav-right">
-      <a href="https://github.com/Algorithm-Azamat/call_center_assist" class="nav-icon-btn" aria-label="GitHub repository" title="Source code on GitHub">
+      <a href="https://github.com/SherzodALTUIT26/scopos" class="nav-icon-btn" aria-label="GitHub repository" title="Source code on GitHub">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       </a>
-      <a href="https://github.com/Algorithm-Azamat/call_center_assist" class="nav-cta">
+      <a href="https://github.com/SherzodALTUIT26/scopos" class="nav-cta">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="0" y="0" width="7" height="7"/><rect x="9" y="0" width="7" height="7"/><rect x="0" y="9" width="7" height="7"/><rect x="9" y="9" width="7" height="7"/></svg>
         Download for Windows
       </a>
@@ -503,49 +628,86 @@
     <!-- Scattered real product screenshots -->
     <div class="scatter scatter-1">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/scatter_docs_left.png" alt="SCOPOS pointing at what to click in Bitrix24">
+      <img src="assets/preview.webp" alt="SCOPOS pointing at what to click in Bitrix24">
     </div>
     <div class="scatter scatter-2">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/scatter_docs_panel.png" alt="SCOPOS step-by-step guide">
+      <img src="assets/preview.webp" alt="SCOPOS step-by-step guide">
     </div>
     <div class="scatter scatter-3">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/scatter_chat_panel.png" alt="SCOPOS AI hint panel">
+      <img src="assets/preview.webp" alt="SCOPOS AI hint panel">
     </div>
     <div class="scatter scatter-4">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/scatter_chat_left.png" alt="SCOPOS inside Bitrix24 chat">
+      <img src="assets/preview.webp" alt="SCOPOS inside Bitrix24 chat">
     </div>
     <div class="scatter scatter-5">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/scatter_docs_left.png" alt="SCOPOS interface">
+      <img src="assets/preview.webp" alt="SCOPOS interface">
     </div>
     <div class="scatter scatter-6">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/scatter_chat_panel.png" alt="SCOPOS chat hints">
+      <img src="assets/preview.webp" alt="SCOPOS chat hints">
     </div>
 
     <div class="hero-content">
       <h1>SCOPOS</h1>
-      <p class="hero-sub">AI copilot for CRM systems. Ask a question — the cursor shows exactly where to click, right on your screen.</p>
+      <p class="hero-sub">A screen-aware AI assistant for Windows. See your screen, get step-by-step instructions, and guides you with a visual cursor.</p>
       <div class="hero-buttons">
-        <a href="https://github.com/Algorithm-Azamat/call_center_assist" class="btn-dark">
+        <a href="https://github.com/SherzodALTUIT26/scopos" class="btn-dark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           Download Free
         </a>
         <a href="#demo" class="btn-outline">Watch Demo</a>
       </div>
-      <p class="hero-note">Chrome extension. Bitrix24, amoCRM, any CRM.</p>
+      <p class="hero-note">Windows application for corporate and personal use</p>
     </div>
   </section>
+
+  <!-- Demo GIF -->
+  <section class="demo-gif-section">
+    <div class="demo-gif-container">
+      <img src="assets/demo.gif" alt="SCOPOS Demo">
+    </div>
+  </section>
+
+    /* ─── Demo GIF ─────────────────────────────────── */
+    .demo-gif-section {
+      padding: 0 24px 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .demo-gif-container {
+      width: 100%;
+      max-width: 860px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #111;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(43,28,20,0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .demo-gif-container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 100px rgba(43,28,20,0.25);
+    }
+
+    .demo-gif-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
 
   <!-- Demo Video -->
   <section class="demo-section" id="demo">
     <div class="demo-video">
-      <video controls preload="metadata" playsinline>
-        <source src="assets/demo.mp4" type="video/mp4">
-      </video>
+      
+        <iframe src="https://www.loom.com/embed/631d93cfe4fa4142b0cfc4140c3698ec" allowfullscreen></iframe>
+      
     </div>
   </section>
 
@@ -553,34 +715,34 @@
   <section class="features" id="features">
     <div class="feature-row">
       <div class="feature-text">
-        <h3>Cursor flies to the button</h3>
-        <p>Claude computer use detects the exact pixel coordinates of an element on the screenshot. No CSS selectors, no guessing — precise coordinates, just like Clicky.</p>
+        <h3>🖥️ Screen-aware AI</h3>
+        <p>Automatically captures screenshots and analyzes what's on your screen in real-time. SCOPOS understands your desktop context and provides relevant assistance based on what you're actually doing.</p>
       </div>
-      <div class="feature-visual"><img src="assets/scatter_docs_left.png" alt="SCOPOS shows where to click"></div>
+      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS shows where to click"></div>
     </div>
 
     <div class="feature-row reverse">
       <div class="feature-text">
-        <h3>Step-by-step guides</h3>
-        <p>Ask "how do I create a deal?" — the AI breaks it down step by step. Each step highlights the element on the page. Click it, move to the next one.</p>
+        <h3>📋 Step-by-step guidance</h3>
+        <p>Get instructions broken down into clear, actionable steps. The blue cursor points to exactly where you need to click or interact, making complex tasks simple to follow.</p>
       </div>
-      <div class="feature-visual"><img src="assets/scatter_docs_panel.png" alt="SCOPOS step-by-step guide"></div>
+      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS step-by-step guide"></div>
     </div>
 
     <div class="feature-row">
       <div class="feature-text">
-        <h3>Learns on its own</h3>
-        <p>The more you use it, the more accurate it gets. It remembers your portal's navigation. A new portal on the same CRM starts "warm" from shared data.</p>
+        <h3>🔵 Visual cursor navigation</h3>
+        <p>Navigate through multi-step instructions with easy controls. The visual cursor shows you exactly where to click, eliminating confusion and saving time.</p>
       </div>
-      <div class="feature-visual"><img src="assets/scatter_chat_panel.png" alt="SCOPOS AI hints"></div>
+      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS AI hints"></div>
     </div>
 
     <div class="feature-row reverse">
       <div class="feature-text">
-        <h3>Knowledge base</h3>
-        <p>Upload your company's PDF/DOCX instructions. The AI uses them when answering — hints based on your own procedures, not a generic knowledge base.</p>
+        <h3>🧠 Smart context & memory</h3>
+        <p>Auto-manages conversation memory to maintain continuity. Text-based chat powered by Claude Sonnet 4.6 with customizable reasoning depth and reply tone.</p>
       </div>
-      <div class="feature-visual"><img src="assets/scatter_chat_left.png" alt="SCOPOS inside Bitrix24"></div>
+      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS inside Bitrix24"></div>
     </div>
   </section>
 
@@ -588,18 +750,27 @@
   <section class="partners">
     <div class="partners-inner">
       <div class="partners-label">our partners</div>
+      <div class="partners-grid">
       <div class="partner-card">
         <img src="assets/uvendor-logo.png" alt="U Vendor LLC" class="partner-logo">
         <span class="partner-name">U VENDOR LLC</span>
+        </div>
+        <div class="partner-card">
+          <img src="assets/partners.webp" alt="idrock accelerator" class="partner-logo" style="width: 80px; height: auto;">
+          <span class="partner-name">idrock accelerator</span>
+        </div>
+        <div class="partner-card">
+          <img src="assets/partners.webp" alt="Uncle Chill" class="partner-logo" style="width: 50px; height: auto;">
+          <span class="partner-name">Uncle Chill</span>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta">
-    <h2>Try it now</h2>
-    <p>Free to use.</p>
-    <a href="https://github.com/Algorithm-Azamat/call_center_assist" class="btn-dark">
+    <h2>Try SCOPOS now</h2>
+    <p>Free and open source. Works seamlessly across multiple monitors.</p>
+    <a href="https://github.com/SherzodALTUIT26/scopos" class="btn-dark">
       Download on GitHub
     </a>
   </section>
@@ -612,7 +783,7 @@
         SCOPOS
       </div>
       <div class="footer-links">
-        <a href="https://github.com/Algorithm-Azamat/call_center_assist">github</a>
+        <a href="https://github.com/SherzodALTUIT26/scopos">github</a>
         <a href="#">privacy</a>
         <a href="https://t.me/bsher_on" target="_blank" rel="noopener noreferrer">support</a>
       </div>
@@ -622,6 +793,66 @@
       <span>© 2026 SCOPOS. All rights reserved.</span>
     </div>
   </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Nav scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Feature row animations on scroll
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-row').forEach(row => {
+      observer.observe(row);
+    });
+
+    // Add parallax effect to scattered images
+    document.addEventListener('mousemove', (e) => {
+      const scatters = document.querySelectorAll('.scatter');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      scatters.forEach((scatter, index) => {
+        const speed = (index + 1) * 0.5;
+        const xMove = (x - 0.5) * speed * 20;
+        const yMove = (y - 0.5) * speed * 20;
+        scatter.style.transform = `translate(${xMove}px, ${yMove}px) rotate(${scatter.style.getPropertyValue('--r')})`;
+      });
+    });
+  </script>
 
 </body>
 </html>
