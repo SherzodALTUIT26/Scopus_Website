@@ -484,7 +484,7 @@
     }
 
     .partners-inner {
-      max-width: 900px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -502,17 +502,17 @@
 
     .partners-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       width: 100%;
-      max-width: 800px;
+      max-width: 1180px;
     }
 
     .partner-card {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 18px 24px;
+      gap: 18px;
+      padding: 22px 22px;
       background: var(--bg);
       border: 1px solid var(--light-gray);
       border-radius: 16px;
@@ -526,11 +526,11 @@
     }
 
     .partner-logo {
-      height: 40px;
+      height: 60px;
       width: auto;
-      max-width: 64px;
+      max-width: 100px;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 10px;
       flex-shrink: 0;
     }
 
@@ -544,9 +544,9 @@
     .partner-name {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 17px;
       letter-spacing: 0.3px;
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     /* ─── CTA ──────────────────────────────────────── */
@@ -630,6 +630,10 @@
     }
 
     /* ─── Responsive ───────────────────────────────── */
+    @media (max-width: 1100px) {
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 768px) {
       .scatter { display: none; }
       .feature-row { grid-template-columns: 1fr; gap: 32px; }
@@ -638,6 +642,7 @@
       .nav-link { display: none; }
       .footer-top { flex-direction: column; text-align: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      .partners-grid { grid-template-columns: 1fr; }
       .partner-card { justify-content: center; text-align: left; }
     }
   </style>
@@ -657,7 +662,7 @@
       <a href="https://github.com/SherzodALTUIT26/scopos" class="nav-icon-btn" aria-label="GitHub repository" title="Source code on GitHub">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       </a>
-      <a href="https://github.com/SherzodALTUIT26/scopos" class="nav-cta">
+      <a href="https://github.com/sajaboy15/scopos/releases/download/v1.2.1/Scopos-Setup-1.2.1.exe" download="Scopos-Setup-1.2.1.exe" class="nav-cta">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="0" y="0" width="7" height="7"/><rect x="9" y="0" width="7" height="7"/><rect x="0" y="9" width="7" height="7"/><rect x="9" y="9" width="7" height="7"/></svg>
         Download for Windows
       </a>
@@ -696,7 +701,7 @@
       <h1>SCOPOS</h1>
       <p class="hero-sub">A screen-aware AI assistant for Windows. See your screen, get step-by-step instructions, and guides you with a visual cursor.</p>
       <div class="hero-buttons">
-        <a href="https://github.com/SherzodALTUIT26/scopos" class="btn-dark">
+        <a href="https://github.com/sajaboy15/scopos/releases/download/v1.2.1/Scopos-Setup-1.2.1.exe" download="Scopos-Setup-1.2.1.exe" class="btn-dark">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           Download Free
         </a>
@@ -798,8 +803,8 @@
   <section class="cta">
     <h2>Try SCOPOS now</h2>
     <p>Free and open source. Works seamlessly across multiple monitors.</p>
-    <a href="https://github.com/SherzodALTUIT26/scopos" class="btn-dark">
-      Download on GitHub
+    <a href="https://github.com/sajaboy15/scopos/releases/download/v1.2.1/Scopos-Setup-1.2.1.exe" download="Scopos-Setup-1.2.1.exe" class="btn-dark">
+      Download for Windows
     </a>
   </section>
 
@@ -813,7 +818,7 @@
       <div class="footer-links">
         <a href="https://github.com/SherzodALTUIT26/scopos">github</a>
         <a href="#">privacy</a>
-        <a href="https://t.me/bsher_on" target="_blank" rel="noopener noreferrer">support</a>
+        <a href="https://t.me/bobojonovsherzod" target="_blank" rel="noopener noreferrer">support</a>
       </div>
     </div>
     <div class="footer-bottom">
