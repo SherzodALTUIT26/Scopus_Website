@@ -401,7 +401,8 @@
       height: 11px;
     }
 
-    .demo-gif-container img {
+    .demo-gif-container img,
+    .demo-gif-container video {
       width: 100%;
       height: auto;
       display: block;
@@ -548,12 +549,6 @@
       line-height: 1.2;
     }
 
-    .partner-role {
-      font-size: 12px;
-      color: var(--gray);
-      font-style: italic;
-    }
-
     /* ─── CTA ──────────────────────────────────────── */
     .cta {
       padding: 120px 24px;
@@ -674,27 +669,27 @@
     <!-- Scattered real product screenshots -->
     <div class="scatter scatter-1">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/preview.webp" alt="SCOPOS pointing at what to click in Bitrix24">
+      <img src="assets/scatter-1.webp" alt="SCOPOS reading a CRM screen">
     </div>
     <div class="scatter scatter-2">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/preview.webp" alt="SCOPOS step-by-step guide">
+      <img src="assets/scatter-2.webp" alt="SCOPOS step-by-step guide tooltip">
     </div>
     <div class="scatter scatter-3">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/preview.webp" alt="SCOPOS AI hint panel">
+      <img src="assets/scatter-3.webp" alt="SCOPOS pointing at the Activity tab">
     </div>
     <div class="scatter scatter-4">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/preview.webp" alt="SCOPOS inside Bitrix24 chat">
+      <img src="assets/scatter-4.webp" alt="SCOPOS guiding a Log a Call flow">
     </div>
     <div class="scatter scatter-5">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/preview.webp" alt="SCOPOS interface">
+      <img src="assets/scatter-5.webp" alt="SCOPOS hint while typing a call note">
     </div>
     <div class="scatter scatter-6">
       <div class="win-bar"><span></span><span></span><span></span></div>
-      <img src="assets/preview.webp" alt="SCOPOS chat hints">
+      <img src="assets/scatter-6.webp" alt="SCOPOS AI hint panel in a CRM">
     </div>
 
     <div class="hero-content">
@@ -711,11 +706,14 @@
     </div>
   </section>
 
-  <!-- Demo GIF -->
+  <!-- Demo Loop -->
   <section class="demo-gif-section">
     <div class="demo-gif-container">
       <div class="win-bar win-bar-lg"><span></span><span></span><span></span></div>
-      <img src="assets/demo.gif" alt="SCOPOS Demo">
+      <video autoplay loop muted playsinline disableremoteplayback aria-label="SCOPOS product demo, looping">
+        <source src="assets/scopos-teaser.webm" type="video/webm">
+        <source src="assets/scopos-teaser.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
@@ -778,14 +776,18 @@
           <img src="assets/idrock-logo.png" alt="idrock accelerator" class="partner-logo">
           <div class="partner-text">
             <span class="partner-name">idrock accelerator</span>
-            <span class="partner-role">Startup accelerator</span>
           </div>
         </div>
         <div class="partner-card">
           <img src="assets/unclechill-logo.png" alt="Uncle Chill" class="partner-logo">
           <div class="partner-text">
             <span class="partner-name">Uncle Chill</span>
-            <span class="partner-role">Community partner</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <img src="assets/nuu-logo.png" alt="New Uzbekistan University" class="partner-logo">
+          <div class="partner-text">
+            <span class="partner-name">New Uzbekistan University</span>
           </div>
         </div>
       </div>
