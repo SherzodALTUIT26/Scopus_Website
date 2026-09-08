@@ -615,7 +615,7 @@
       gap: 12px;
     }
 
-    .contact-form input[type="email"],
+    .contact-form input:not([type="hidden"]),
     .contact-form textarea {
       width: 100%;
       padding: 14px 16px;
@@ -629,7 +629,7 @@
       transition: border-color 0.2s;
     }
 
-    .contact-form input[type="email"]:focus,
+    .contact-form input:not([type="hidden"]):focus,
     .contact-form textarea:focus {
       outline: none;
       border-color: var(--brand);
@@ -748,7 +748,7 @@
       <a href="#demo" class="nav-link">demo</a>
     </div>
     <div class="nav-right">
-      <a href="mailto:sherzodbobojonov077@gmail.com?subject=SCOPOS%20-%20Request%20Access&body=Company%3A%20%0ATeam%20size%3A%20%0ACRM%20you%20use%3A%20%0A" class="nav-cta">
+      <a href="#request-access" class="nav-cta">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         Request Access
       </a>
@@ -787,7 +787,7 @@
       <h1>SCOPOS</h1>
       <p class="hero-sub">A screen-aware AI assistant for Windows. See your screen, get step-by-step instructions, and guides you with a visual cursor.</p>
       <div class="hero-buttons">
-        <a href="mailto:sherzodbobojonov077@gmail.com?subject=SCOPOS%20-%20Request%20Access&body=Company%3A%20%0ATeam%20size%3A%20%0ACRM%20you%20use%3A%20%0A" class="btn-dark">
+        <a href="#request-access" class="btn-dark">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           Request Access
         </a>
@@ -886,12 +886,22 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <h2>Get SCOPOS for your team</h2>
-    <p>Works seamlessly across multiple monitors. Reach out and we'll get you set up.</p>
-    <a href="mailto:sherzodbobojonov077@gmail.com?subject=SCOPOS%20-%20Request%20Access&body=Company%3A%20%0ATeam%20size%3A%20%0ACRM%20you%20use%3A%20%0A" class="btn-dark">
-      Request Access
-    </a>
+  <section class="cta" id="request-access">
+    <div class="contact-inner">
+      <h2>Get SCOPOS for your team</h2>
+      <p>Works seamlessly across multiple monitors. Tell us a bit about your team and we'll reach out.</p>
+      <form class="contact-form" id="requestForm">
+        <input type="email" name="email" placeholder="Your email" required>
+        <input type="text" name="company" placeholder="Company (optional)">
+        <input type="text" name="team_size" placeholder="Team size (optional)">
+        <input type="text" name="crm" placeholder="CRM you use (optional)">
+        <input type="hidden" name="_subject" value="New Request Access - SCOPOS website">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn-dark">Request Access</button>
+        <p class="contact-status" id="requestStatus"></p>
+      </form>
+    </div>
   </section>
 
   <!-- Contact -->
@@ -987,13 +997,14 @@
       });
     });
 
-    // Contact form — submits without leaving the page
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
+    // Forms — submit to FormSubmit without leaving the page
+    function wireForm(formId, statusId, successMessage) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const status = document.getElementById('contactStatus');
-        const btn = contactForm.querySelector('button');
+        const status = document.getElementById(statusId);
+        const btn = form.querySelector('button');
         btn.disabled = true;
         status.className = 'contact-status';
         status.textContent = 'Sending…';
@@ -1001,12 +1012,12 @@
           const res = await fetch('https://formsubmit.co/ajax/sherzodbobojonov077@gmail.com', {
             method: 'POST',
             headers: { 'Accept': 'application/json' },
-            body: new FormData(contactForm)
+            body: new FormData(form)
           });
           if (!res.ok) throw new Error('Request failed');
           status.className = 'contact-status ok';
-          status.textContent = "Thanks — we'll reply by email soon.";
-          contactForm.reset();
+          status.textContent = successMessage;
+          form.reset();
         } catch (err) {
           status.className = 'contact-status err';
           status.textContent = 'Something went wrong — please email us directly instead.';
@@ -1015,6 +1026,9 @@
         }
       });
     }
+
+    wireForm('requestForm', 'requestStatus', "Thanks — we'll be in touch soon.");
+    wireForm('contactForm', 'contactStatus', "Thanks — we'll reply by email soon.");
   </script>
 
 </body>
