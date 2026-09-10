@@ -339,33 +339,6 @@
       animation: fadeInUp 0.8s ease 0.8s both;
     }
 
-    /* ─── Video Demo ───────────────────────────────── */
-    .demo-section {
-      padding: 0 24px 100px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .demo-video {
-      width: 100%;
-      max-width: 860px;
-      aspect-ratio: 16 / 9;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #111;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 24px 80px rgba(43,28,20,0.18);
-    }
-
-    .demo-video iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
     /* ─── Demo GIF ─────────────────────────────────── */
     .demo-gif-section {
       padding: 0 24px 60px;
@@ -799,22 +772,13 @@
   </section>
 
   <!-- Demo Loop -->
-  <section class="demo-gif-section">
+  <section class="demo-gif-section" id="demo">
     <div class="demo-gif-container">
       <div class="win-bar win-bar-lg"><span></span><span></span><span></span></div>
       <video autoplay loop muted playsinline disableremoteplayback aria-label="SCOPOS product demo, looping">
         <source src="assets/scopos-teaser.webm" type="video/webm">
         <source src="assets/scopos-teaser.mp4" type="video/mp4">
       </video>
-    </div>
-  </section>
-
-  <!-- Demo Video -->
-  <section class="demo-section" id="demo">
-    <div class="demo-video">
-      
-        <iframe src="https://www.loom.com/embed/631d93cfe4fa4142b0cfc4140c3698ec" allowfullscreen></iframe>
-      
     </div>
   </section>
 
@@ -825,7 +789,7 @@
         <h3>🖥️ Screen-aware AI</h3>
         <p>Automatically captures screenshots and analyzes what's on your screen in real-time. SCOPOS understands your desktop context and provides relevant assistance based on what you're actually doing.</p>
       </div>
-      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS shows where to click"></div>
+      <div class="feature-visual"><img src="assets/feature-1.webp" alt="SCOPOS analyzing what's on screen in real-time"></div>
     </div>
 
     <div class="feature-row reverse">
@@ -833,7 +797,7 @@
         <h3>📋 Step-by-step guidance</h3>
         <p>Get instructions broken down into clear, actionable steps. The blue cursor points to exactly where you need to click or interact, making complex tasks simple to follow.</p>
       </div>
-      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS step-by-step guide"></div>
+      <div class="feature-visual"><img src="assets/feature-2.webp" alt="SCOPOS step-by-step guide pointing to the Activity tab"></div>
     </div>
 
     <div class="feature-row">
@@ -841,7 +805,7 @@
         <h3>🔵 Visual cursor navigation</h3>
         <p>Navigate through multi-step instructions with easy controls. The visual cursor shows you exactly where to click, eliminating confusion and saving time.</p>
       </div>
-      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS AI hints"></div>
+      <div class="feature-visual"><img src="assets/feature-3.webp" alt="SCOPOS visual cursor pointing to the Save button"></div>
     </div>
 
     <div class="feature-row reverse">
@@ -849,7 +813,7 @@
         <h3>🧠 Smart context & memory</h3>
         <p>Auto-manages conversation memory to maintain continuity. Text-based chat powered by Claude Sonnet 4.6 with customizable reasoning depth and reply tone.</p>
       </div>
-      <div class="feature-visual"><img src="assets/preview.webp" alt="SCOPOS inside Bitrix24"></div>
+      <div class="feature-visual"><img src="assets/feature-4.webp" alt="Asking SCOPOS a question in your own words"></div>
     </div>
   </section>
 
