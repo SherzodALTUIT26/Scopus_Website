@@ -475,8 +475,9 @@
     }
 
     .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
       width: 100%;
       max-width: 1180px;
@@ -491,6 +492,8 @@
       border: 1px solid var(--light-gray);
       border-radius: 16px;
       transition: all 0.3s ease;
+      cursor: pointer;
+      flex: 0 1 260px;
     }
 
     .partner-card:hover {
@@ -693,10 +696,6 @@
     }
 
     /* ─── Responsive ───────────────────────────────── */
-    @media (max-width: 1100px) {
-      .partners-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
     @media (max-width: 768px) {
       .scatter { display: none; }
       .feature-row { grid-template-columns: 1fr; gap: 32px; }
@@ -705,8 +704,7 @@
       .nav-link { display: none; }
       .footer-top { flex-direction: column; text-align: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .partners-grid { grid-template-columns: 1fr; }
-      .partner-card { justify-content: center; text-align: left; }
+      .partner-card { width: 100%; justify-content: center; text-align: left; }
     }
   </style>
 </head>
@@ -822,28 +820,34 @@
     <div class="partners-inner">
       <div class="partners-label">our partners</div>
       <div class="partners-grid">
-        <div class="partner-card">
+        <div class="partner-card" data-url="https://www.uvendor.uz/">
           <img src="assets/uvendor-logo.png" alt="U Vendor LLC" class="partner-logo">
           <div class="partner-text">
             <span class="partner-name">U VENDOR LLC</span>
           </div>
         </div>
-        <div class="partner-card">
+        <div class="partner-card" data-url="https://idrock.uz/">
           <img src="assets/idrock-logo.png" alt="idrock accelerator" class="partner-logo">
           <div class="partner-text">
             <span class="partner-name">idrock accelerator</span>
           </div>
         </div>
-        <div class="partner-card">
+        <div class="partner-card" data-url="https://unclechill.uz/">
           <img src="assets/unclechill-logo.png" alt="Uncle Chill" class="partner-logo">
           <div class="partner-text">
             <span class="partner-name">Uncle Chill</span>
           </div>
         </div>
-        <div class="partner-card">
+        <div class="partner-card" data-url="https://newuu.uz/">
           <img src="assets/nuu-logo.png" alt="New Uzbekistan University" class="partner-logo">
           <div class="partner-text">
             <span class="partner-name">New Uzbekistan University</span>
+          </div>
+        </div>
+        <div class="partner-card" data-url="https://ipsilon.group/">
+          <img src="assets/ipsilon-logo.png" alt="Ipsilon Group" class="partner-logo">
+          <div class="partner-text">
+            <span class="partner-name">Ipsilon Group</span>
           </div>
         </div>
       </div>
@@ -994,6 +998,12 @@
 
     wireForm('requestForm', 'requestStatus', "Thanks — we'll be in touch soon.");
     wireForm('contactForm', 'contactStatus', "Thanks — we'll reply by email soon.");
+
+    document.querySelectorAll('.partner-card[data-url]').forEach((card) => {
+      card.addEventListener('dblclick', () => {
+        window.open(card.dataset.url, '_blank', 'noopener,noreferrer');
+      });
+    });
   </script>
 
 </body>
