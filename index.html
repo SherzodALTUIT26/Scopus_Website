@@ -836,7 +836,7 @@
     <div class="feature-row reverse">
       <div class="feature-text">
         <h3>🧠 Smart context & memory</h3>
-        <p>Auto-manages conversation memory to maintain continuity. Text-based chat powered by Claude Sonnet 4.6 with customizable reasoning depth and reply tone.</p>
+        <p>Ask follow-up questions about the step you are on. SCOPOS remembers the conversation and the routes your team uses most.</p>
       </div>
       <div class="feature-visual"><img src="assets/feature-4.webp" alt="Asking SCOPOS a question in your own words"></div>
     </div>
@@ -846,22 +846,22 @@
   <div id="pd">
 <section id="problem"><div class="w">
   <div class="n">01 · Problem → Solution</div>
-  <h2>New employees get lost in corporate software</h2>
+  <h2>New employees get lost in business software</h2>
   <div class="g2" style="margin-top:16px">
     <div class="c"><h3>❌ Problem</h3>
       <ul>
-        <li>CRM and ERP systems (1C, Bitrix24, amoCRM) have hundreds of menus and forms. A new worker opens the program and does not know where anything is.</li>
-        <li>Onboarding takes weeks; senior staff are constantly interrupted with the same "where do I click?" questions.</li>
-        <li>Written instructions and videos go out of date and don't match what the person actually sees on the screen.</li>
-        <li>Mistakes in documents and orders cost the company money.</li>
+        <li>CRM and ERP systems have hundreds of menus and forms. A new employee opens the program and doesn't know where anything is.</li>
+        <li>It takes about two weeks before a new CRM employee can work alone (measured at our pilot client).</li>
+        <li>Senior staff are constantly interrupted with the same "where do I click?" questions.</li>
+        <li>Manuals and training videos go out of date and don't match the real screen.</li>
       </ul>
     </div>
-    <div class="c"><h3>✅ Solution — SCOPOS</h3>
+    <div class="c"><h3>✅ Solution: SCOPOS</h3>
       <ul>
-        <li>The worker types a question: <i>"How do I create a sales invoice?"</i></li>
-        <li>SCOPOS reads the screen (screenshot + Windows UI Automation tree) and builds a step-by-step route.</li>
-        <li>A blue cursor flies to the exact button for each step; the next step appears when the screen changes.</li>
-        <li>It is a coach, not a bot: the person clicks themselves and learns the program. Works in Russian, Uzbek and English, across multiple monitors.</li>
+        <li>The employee asks in their own words: <i>"How do I create an invoice?"</i></li>
+        <li>SCOPOS reads the live screen and points the cursor at the next click, step by step.</li>
+        <li>It works on top of the company's existing system. Nothing needs to be re-implemented.</li>
+        <li>It's a coach, not a bot: the person clicks and learns. Russian, Uzbek and English.</li>
       </ul>
     </div>
   </div>
@@ -869,17 +869,28 @@
 
 <section id="team"><div class="w">
   <div class="n">02 · Team</div>
-  <h2>SAJA BOYS</h2>
-  <div class="g2" style="margin-top:16px">
-    <div class="c"><h3>Founder · Lead developer</h3>
-      <p>Product, desktop app architecture, AI pipeline, pilots with clients.</p>
-      <div class="chips"><span>TypeScript</span><span>Electron</span><span>React</span><span>C# / UI Automation</span><span>Claude API</span><span>Python</span></div>
-      <p style="margin-top:8px"><a href="https://github.com/sajaboy15" target="_blank" rel="noopener">github.com/sajaboy15</a></p>
+  <h2>Three technical co-founders</h2>
+  <div class="g3" style="margin-top:16px">
+    <div class="c"><h3>Sherzod Bobojonov</h3>
+      <p><b>Founder &amp; CEO</b></p>
+      <p style="margin-top:6px">Product manager and Python developer. Developer intern at U VENDOR, our pilot client.</p>
+      <div class="chips"><span>Product</span><span>Python</span><span>Sales</span></div>
     </div>
-    <div class="c"><h3>Technologies we use</h3>
-      <div class="chips"><span>Electron + React + TypeScript</span><span>Windows UI Automation (native C# bridge)</span><span>Claude Sonnet vision</span><span>Prompt caching</span><span>Local knowledge base</span><span>Playbooks (learned routes)</span><span>Vercel</span><span>Python data tooling</span></div>
-      <p style="margin-top:8px">Links: <a href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">source code</a> · <a href="../" target="_blank" rel="noopener">website</a></p>
+    <div class="c"><h3>Azamat Azamov</h3>
+      <p><b>Co-founder · Full-stack engineer</b></p>
+      <p style="margin-top:6px">Builds the Windows desktop app and the website.</p>
+      <div class="chips"><span>TypeScript</span><span>Electron</span><span>React</span><span>C#</span></div>
     </div>
+    <div class="c"><h3>Shakhriyor Boltabayev</h3>
+      <p><b>Co-founder · AI engineer</b></p>
+      <p style="margin-top:6px">Owns the AI stack: screen understanding and step planning.</p>
+      <div class="chips"><span>LLMs</span><span>Computer vision</span><span>Python</span></div>
+    </div>
+  </div>
+  <div class="c" style="margin-top:16px">
+    <p><b>Technologies:</b></p>
+    <div class="chips"><span>Electron + React + TypeScript</span><span>Windows UI Automation</span><span>Claude vision API</span><span>Local LLM (on-premise option)</span><span>Python</span></div>
+    <p style="margin-top:10px"><b>Links:</b> <a href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">GitHub (prototype)</a> · <a href="/demo">Demo</a></p>
   </div>
 </div></section>
 
@@ -887,12 +898,12 @@
   <div class="n">03 · Why us</div>
   <h2>Why our team can solve this</h2>
   <div class="g3" style="margin-top:16px">
-    <div class="c"><h3>We already built it</h3><p>A working Windows app (v1.5, 13+ iterations), not just an idea. Installer, onboarding tour, usage limits, history.</p></div>
-    <div class="c"><h3>Tested on real software</h3><p>Piloted on "1C: Accounting for Uzbekistan 3.0" with a real company. We mapped all 16 sections and 450+ menu items of 1C.</p></div>
-    <div class="c"><h3>Deep tech, measured</h3><p>Our native UI Automation bridge reads a screen 4–5× faster; learned routes replay in 0.4 s with zero AI calls. We measure every change.</p></div>
-    <div class="c"><h3>Local market</h3><p>We know how Uzbek companies work: 1C, Bitrix24, amoCRM, Russian/Uzbek interfaces, high staff turnover.</p></div>
-    <div class="c"><h3>Partners</h3><p>U Vendor LLC (pilot), idrock accelerator, Uncle Chill, New Uzbekistan University, Ipsilon Group.</p></div>
-    <div class="c"><h3>Competitive edge</h3><p>The closest competitor (HeyClicky, YC) is macOS-only and consumer-focused. SCOPOS is Windows-first and B2B.</p></div>
+    <div class="c"><h3>Already built</h3><p>A working Windows prototype that guides users with an on-screen cursor. Not just an idea.</p></div>
+    <div class="c"><h3>We know the pain first-hand</h3><p>Our CEO works at U VENDOR, our pilot client, where we measured the onboarding problem ourselves.</p></div>
+    <div class="c"><h3>Early traction</h3><p>Pilot with U VENDOR. 5-year contract with New Uzbekistan University. Signed agreement with Uncle Chill.</p></div>
+    <div class="c"><h3>Backed</h3><p>IDROCK AI Startup Accelerator, Cohort 1 (since Aug 2026). Advisor: Ipsilon Group.</p></div>
+    <div class="c"><h3>Affordable</h3><p>Global tools like WalkMe cost ~$39K a year and target large enterprises. SCOPOS targets ~$2.4K a year for mid-size teams.</p></div>
+    <div class="c"><h3>Private by design</h3><p>Runs on the Claude API, or on a local model on the client's own server for sensitive data.</p></div>
   </div>
 </div></section>
 
@@ -900,10 +911,10 @@
   <div class="n">04 · Roadmap</div>
   <h2>Where we are</h2>
   <div class="g4" style="margin-top:16px">
-    <div class="c stage done"><div class="s">✓ Done</div><h3>Idea</h3><p>Spring 2026: AI coach that points at the screen instead of long manuals.</p></div>
-    <div class="c stage done"><div class="s">✓ Done</div><h3>Prototype</h3><p>Aug 2026: screenshot → steps → cursor overlay on Windows.</p></div>
-    <div class="c stage now"><div class="s">● We are here</div><h3>MVP</h3><p>Sep–Oct 2026: v1.5 with UI Automation, playbooks, knowledge base; pilot with a real company in 1C.</p></div>
-    <div class="c stage"><div class="s">Next</div><h3>Launched</h3><p>Q1 2027: paid B2B plans, Bitrix24 &amp; amoCRM packs, admin dashboard, signed installer.</p></div>
+    <div class="c stage done"><div class="s">✓ Done</div><h3>Idea</h3><p>An AI coach that points at the screen instead of long manuals.</p></div>
+    <div class="c stage done"><div class="s">✓ Done</div><h3>Prototype</h3><p>Windows app: question → steps → cursor on the right button.</p></div>
+    <div class="c stage now"><div class="s">● We are here</div><h3>MVP</h3><p>Pilot with U VENDOR; measuring onboarding time against the 2-week baseline.</p></div>
+    <div class="c stage"><div class="s">Next</div><h3>Launched</h3><p>Paid subscriptions, partner integrators, then Kazakhstan.</p></div>
   </div>
 </div></section>
 
@@ -913,23 +924,26 @@
   <div class="c" style="margin-top:16px;overflow-x:auto">
     <table>
       <tr><th>Stage</th><th>What</th><th>Technologies &amp; AI</th></tr>
-      <tr><td><b>1. See</b> ✓</td><td>Capture the screen and read the window structure</td><td>Electron desktop capture, native C# Windows UI Automation bridge (element names, positions, roles)</td></tr>
-      <tr><td><b>2. Understand</b> ✓</td><td>Turn the question + screen into a route of steps</td><td>Claude Sonnet vision, one structured call per question, JSON schema, prompt caching (≈70% fewer tokens)</td></tr>
-      <tr><td><b>3. Point</b> ✓</td><td>Show each step with a cursor exactly on the control</td><td>Transparent overlay, UIA name search (17 ms), re-plan when the screen changes</td></tr>
-      <tr><td><b>4. Remember</b> ✓</td><td>Learn routes once, replay instantly</td><td>Playbooks with aliases, local knowledge base per company (regulations, 1C map)</td></tr>
-      <tr><td><b>5. Scale</b> — Q4 2026</td><td>Packs for Bitrix24, amoCRM; task planner from a job description</td><td>Data harvesting from UI trees, AI task decomposition</td></tr>
-      <tr><td><b>6. Own model</b> — 2027</td><td>Run on-premise for companies that can't send screens to the cloud</td><td>Fine-tuned local vision model (GUI-Owl / Qwen-VL, LoRA), distillation from Claude</td></tr>
-      <tr><td><b>7. Business</b> — 2027</td><td>B2B subscriptions, admin analytics: where employees get stuck</td><td>Backend + billing, usage telemetry, signed auto-updating installer</td></tr>
+      <tr><td><b>1. See</b> ✓</td><td>Read the screen and the structure of the open window</td><td>Screen capture + Windows UI Automation (button names and positions)</td></tr>
+      <tr><td><b>2. Understand</b> ✓</td><td>Turn the question into a route of steps</td><td>Claude vision model, structured step plan</td></tr>
+      <tr><td><b>3. Point</b> ✓</td><td>Show each step with a cursor on the exact button</td><td>Transparent overlay; re-plans when the screen changes</td></tr>
+      <tr><td><b>4. Remember</b> ✓</td><td>Learn a route once, replay it instantly</td><td>Saved routes + company knowledge base, no AI call needed</td></tr>
+      <tr><td><b>5. Pilot → paid</b></td><td>Prove faster onboarding at U VENDOR, convert to a contract</td><td>Usage analytics: where employees get stuck</td></tr>
+      <tr><td><b>6. Private mode</b></td><td>Run on the client's own server</td><td>Fine-tuned local vision model</td></tr>
+      <tr><td><b>7. Scale</b></td><td>Sell through CRM/ERP integrators, then Kazakhstan</td><td>Ready-made guide packs per system</td></tr>
     </table>
+  </div>
+  <div class="g2" style="margin-top:16px">
+    <div class="c"><h3>Business model</h3><p>Subscription, target <b>~$200 per company per month</b>. On-premise option for data-sensitive clients. Price is being tested in pilots.</p></div>
+    <div class="c"><h3>Customers</h3><p>Teams of 50+ with high turnover: call centres, logistics, retail, delivery.</p></div>
   </div>
 </div></section>
 
 <section><div class="w" style="text-align:center">
   <h2>See it in action</h2>
   <p style="color:var(--mut)">Demo video, description and working prototype</p>
-  <a class="big" href="/demo">Open /demo →</a>
+  <a class="big" href="/demo">Open demo →</a>
 </div></section>
-
 </div>
 
   <section class="partners">
