@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SCOPOS — Screen-Aware AI Assistant</title>
-  <link rel="icon" type="image/png" href="assets/icon.png">
+  <meta name="description" content="SCOPOS is an AI coach for Windows: ask a question and it points the cursor at the next click in your CRM or ERP. Pitch Day 3.0 submission.">
+  <meta property="og:title" content="SCOPOS — AI coach inside your work software">
+  <meta property="og:description" content="Ask in your own words, SCOPOS points at the exact button. Demo, team, roadmap.">
+  <meta property="og:image" content="https://scopus-website.vercel.app/assets/scatter_chat_panel.png">
+  <meta property="og:url" content="https://scopus-website.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -708,7 +715,10 @@
     }
   </style>
 <style>
-#pd{--bg:#f8f6f2;--fg:#1c1a17;--mut:#6b655c;--acc:#a8461f;--card:#fff;--line:#e6e1d8;color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:left}
+#pd{--fg:#1c1a17;--mut:#6b655c;--acc:#a8461f;--card:#fff;--line:#e6e1d8;color:var(--fg);font:16px/1.6 'Inter',-apple-system,sans-serif;text-align:left}
+#pd h2,#pd h3{font-family:'Space Grotesk',sans-serif}
+section[id]{scroll-margin-top:80px}
+#pd .ghost{background:var(--card);color:var(--fg);border:1px solid var(--line)}
 #pd *{box-sizing:border-box}
 #pd a{color:var(--acc)}
 #pd .w{max-width:960px;margin:0 auto;padding:0 16px}
@@ -741,15 +751,16 @@
         <img src="assets/icon.png" alt="SCOPOS">
         SCOPOS
       </a>
-      <a href="#features" class="nav-link">features</a>
-      <a href="#problem" class="nav-link">about</a>
+      <a href="#problem" class="nav-link">problem</a>
+      <a href="#team" class="nav-link">team</a>
+      <a href="#why" class="nav-link">why us</a>
       <a href="#roadmap" class="nav-link">roadmap</a>
-      <a href="/demo" class="nav-link">demo</a>
+      <a href="#plan" class="nav-link">plan</a>
     </div>
     <div class="nav-right">
-      <a href="#request-access" class="nav-cta">
+      <a href="/demo" class="nav-cta">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        Request Access
+        Demo
       </a>
     </div>
   </nav>
@@ -784,62 +795,22 @@
 
     <div class="hero-content">
       <h1>SCOPOS</h1>
-      <p class="hero-sub">A screen-aware AI assistant for Windows. See your screen, get step-by-step instructions, and guides you with a visual cursor.</p>
+      <p class="hero-sub">An AI coach for Windows. Ask a question in your own words, and SCOPOS points the cursor at the next click, so new employees learn their CRM or ERP without asking a senior.</p>
       <div class="hero-buttons">
-        <a href="#request-access" class="btn-dark">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          Request Access
-        </a>
-        <a href="#demo" class="btn-outline">Watch Demo</a>
+        <a href="/demo" class="btn-dark">Watch demo</a>
+        <a href="#problem" class="btn-outline">Read the pitch</a>
       </div>
-      <p class="hero-note">Windows application for corporate and personal use</p>
+      <p class="hero-note">Pitch Day 3.0 · Windows application for business teams</p>
     </div>
   </section>
 
-  <!-- Demo Loop -->
-  <section class="demo-gif-section" id="demo">
-    <div class="demo-gif-container">
-      <div class="win-bar win-bar-lg"><span></span><span></span><span></span></div>
-      <video controls playsinline preload="metadata" aria-label="SCOPOS product demo"><source src="assets/scopos-demo.mp4#t=0.5" type="video/mp4"></video>
-    </div>
-  </section>
+  
+  
 
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="feature-row">
-      <div class="feature-text">
-        <h3>🖥️ Screen-aware AI</h3>
-        <p>Automatically captures screenshots and analyzes what's on your screen in real-time. SCOPOS understands your desktop context and provides relevant assistance based on what you're actually doing.</p>
-      </div>
-      <div class="feature-visual"><img src="assets/feature-1.webp" alt="SCOPOS analyzing what's on screen in real-time"></div>
-    </div>
+  
+  
 
-    <div class="feature-row reverse">
-      <div class="feature-text">
-        <h3>📋 Step-by-step guidance</h3>
-        <p>Get instructions broken down into clear, actionable steps. The blue cursor points to exactly where you need to click or interact, making complex tasks simple to follow.</p>
-      </div>
-      <div class="feature-visual"><img src="assets/feature-2.webp" alt="SCOPOS step-by-step guide pointing to the Activity tab"></div>
-    </div>
-
-    <div class="feature-row">
-      <div class="feature-text">
-        <h3>🔵 Visual cursor navigation</h3>
-        <p>Navigate through multi-step instructions with easy controls. The visual cursor shows you exactly where to click, eliminating confusion and saving time.</p>
-      </div>
-      <div class="feature-visual"><img src="assets/feature-3.webp" alt="SCOPOS visual cursor pointing to the Save button"></div>
-    </div>
-
-    <div class="feature-row reverse">
-      <div class="feature-text">
-        <h3>🧠 Smart context & memory</h3>
-        <p>Ask follow-up questions about the step you are on. SCOPOS remembers the conversation and the routes your team uses most.</p>
-      </div>
-      <div class="feature-visual"><img src="assets/feature-4.webp" alt="Asking SCOPOS a question in your own words"></div>
-    </div>
-  </section>
-
-  <!-- Partners -->
+  
   <div id="pd">
 <section id="problem"><div class="w">
   <div class="n">01 · Problem → Solution</div>
@@ -848,8 +819,8 @@
     <div class="c"><h3>❌ Problem</h3>
       <ul>
         <li>CRM and ERP systems have hundreds of menus and forms. A new employee opens the program and doesn't know where anything is.</li>
-        <li>It takes about two weeks before a new CRM employee can work alone (measured at our pilot client).</li>
-        <li>Senior staff are constantly interrupted with the same "where do I click?" questions.</li>
+        <li>At our pilot company, a new CRM employee needs about two weeks before working without help.</li>
+        <li>Senior staff are interrupted again and again with the same "where do I click?" questions.</li>
         <li>Manuals and training videos go out of date and don't match the real screen.</li>
       </ul>
     </div>
@@ -857,8 +828,8 @@
       <ul>
         <li>The employee asks in their own words: <i>"How do I create an invoice?"</i></li>
         <li>SCOPOS reads the live screen and points the cursor at the next click, step by step.</li>
-        <li>It works on top of the company's existing system. Nothing needs to be re-implemented.</li>
-        <li>It's a coach, not a bot: the person clicks and learns. Russian, Uzbek and English.</li>
+        <li>It sits on top of the company's existing system. Nothing has to be re-implemented.</li>
+        <li>A coach, not a bot: the person clicks and learns. Russian, Uzbek and English.</li>
       </ul>
     </div>
   </div>
@@ -866,28 +837,30 @@
 
 <section id="team"><div class="w">
   <div class="n">02 · Team</div>
-  <h2>Three technical co-founders</h2>
+  <h2>Three co-founders, building in-house</h2>
   <div class="g3" style="margin-top:16px">
     <div class="c"><h3>Sherzod Bobojonov</h3>
       <p><b>Founder &amp; CEO</b></p>
-      <p style="margin-top:6px">Product manager and Python developer. Developer intern at U VENDOR, our pilot client.</p>
-      <div class="chips"><span>Product</span><span>Python</span><span>Sales</span></div>
+      <p style="margin-top:6px">Product manager and Python developer. Works at U VENDOR, which gave us access to measure onboarding on their real CRM.</p>
+      <div class="chips"><span>Product management</span><span>Python</span><span>Customer pilots</span></div>
+      <p style="margin-top:8px"><a href="https://github.com/SherzodALTUIT26" target="_blank" rel="noopener">GitHub</a></p>
     </div>
     <div class="c"><h3>Azamat Azamov</h3>
       <p><b>Co-founder · Full-stack engineer</b></p>
-      <p style="margin-top:6px">Builds the Windows desktop app and the website.</p>
-      <div class="chips"><span>TypeScript</span><span>Electron</span><span>React</span><span>C#</span></div>
+      <p style="margin-top:6px">Builds the Windows desktop app, the on-screen cursor and the website.</p>
+      <div class="chips"><span>TypeScript</span><span>Electron</span><span>React</span><span>C# / UI Automation</span></div>
+      <p style="margin-top:8px"><a href="https://github.com/sajaboy15" target="_blank" rel="noopener">GitHub</a></p>
     </div>
     <div class="c"><h3>Shakhriyor Boltabayev</h3>
       <p><b>Co-founder · AI engineer</b></p>
-      <p style="margin-top:6px">Owns the AI stack: screen understanding and step planning.</p>
+      <p style="margin-top:6px">Owns the AI stack: screen understanding, step planning and the local model.</p>
       <div class="chips"><span>LLMs</span><span>Computer vision</span><span>Python</span></div>
     </div>
   </div>
   <div class="c" style="margin-top:16px">
-    <p><b>Technologies:</b></p>
-    <div class="chips"><span>Electron + React + TypeScript</span><span>Windows UI Automation</span><span>Claude vision API</span><span>Local LLM (on-premise option)</span><span>Python</span></div>
-    <p style="margin-top:10px"><b>Links:</b> <a href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">GitHub (prototype)</a> · <a href="/demo">Demo</a></p>
+    <p><b>Technologies &amp; tools:</b></p>
+    <div class="chips"><span>Electron + React + TypeScript</span><span>Windows UI Automation</span><span>Claude vision API</span><span>Python</span><span>GitHub + electron-builder</span><span>Vercel</span></div>
+    <p style="margin-top:10px"><b>Links:</b> <a href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">Prototype source</a> · <a href="https://github.com/sajaboy15/scopos/releases/latest" target="_blank" rel="noopener">Download for Windows</a> · <a href="/demo">Demo video</a></p>
   </div>
 </div></section>
 
@@ -895,12 +868,12 @@
   <div class="n">03 · Why us</div>
   <h2>Why our team can solve this</h2>
   <div class="g3" style="margin-top:16px">
-    <div class="c"><h3>Already built</h3><p>A working Windows prototype that guides users with an on-screen cursor. Not just an idea.</p></div>
-    <div class="c"><h3>We know the pain first-hand</h3><p>Our CEO works at U VENDOR, our pilot client, where we measured the onboarding problem ourselves.</p></div>
-    <div class="c"><h3>Early traction</h3><p>Pilot with U VENDOR. 5-year contract with New Uzbekistan University. Signed agreement with Uncle Chill.</p></div>
-    <div class="c"><h3>Backed</h3><p>IDROCK AI Startup Accelerator, Cohort 1 (since Aug 2026). Advisor: Ipsilon Group.</p></div>
-    <div class="c"><h3>Affordable</h3><p>Global tools like WalkMe cost ~$39K a year and target large enterprises. SCOPOS targets ~$2.4K a year for mid-size teams.</p></div>
-    <div class="c"><h3>Private by design</h3><p>Runs on the Claude API, or on a local model on the client's own server for sensitive data.</p></div>
+    <div class="c"><h3>Already built</h3><p>A working Windows prototype that guides users with an on-screen cursor. You can download it and try it.</p></div>
+    <div class="c"><h3>We see the pain first-hand</h3><p>Our CEO works at U VENDOR, our pilot company, where we measure the onboarding problem on a real CRM.</p></div>
+    <div class="c"><h3>Early traction</h3><p>Pilot with U VENDOR. Signed in September 2026: a 5-year contract with New Uzbekistan University and an agreement with Uncle Chill.</p></div>
+    <div class="c"><h3>Backed by an accelerator</h3><p>IDROCK AI Startup Accelerator, Cohort 1, since August 2026. Advisor: Ipsilon Group.</p></div>
+    <div class="c"><h3>Built for mid-size teams</h3><p>Global tools like WalkMe target large enterprises at ~$39K a year. SCOPOS targets ~$2.4K a year.</p></div>
+    <div class="c"><h3>Complete technical team</h3><p>Product, desktop engineering and AI are all in-house, so we iterate in days, not months.</p></div>
   </div>
 </div></section>
 
@@ -908,10 +881,10 @@
   <div class="n">04 · Roadmap</div>
   <h2>Where we are</h2>
   <div class="g4" style="margin-top:16px">
-    <div class="c stage done"><div class="s">✓ Done</div><h3>Idea</h3><p>An AI coach that points at the screen instead of long manuals.</p></div>
-    <div class="c stage done"><div class="s">✓ Done</div><h3>Prototype</h3><p>Windows app: question → steps → cursor on the right button.</p></div>
-    <div class="c stage now"><div class="s">● We are here</div><h3>MVP</h3><p>Pilot with U VENDOR; measuring onboarding time against the 2-week baseline.</p></div>
-    <div class="c stage"><div class="s">Next</div><h3>Launched</h3><p>Paid subscriptions, partner integrators, then Kazakhstan.</p></div>
+    <div class="c stage done"><div class="s">✓ Done · Summer 2026</div><h3>Idea</h3><p>An AI coach that points at the screen instead of long manuals.</p></div>
+    <div class="c stage done"><div class="s">✓ Done · Aug–Sep 2026</div><h3>Prototype</h3><p>Windows app: question → steps → cursor on the right button.</p></div>
+    <div class="c stage now"><div class="s">● We are here · Oct 2026</div><h3>MVP</h3><p>Pilot with U VENDOR, measuring onboarding time against the 2-week baseline.</p></div>
+    <div class="c stage"><div class="s">Next · 2027</div><h3>Launched</h3><p>Paid subscriptions, integrator partners, then Kazakhstan.</p></div>
   </div>
 </div></section>
 
@@ -920,87 +893,32 @@
   <h2>How we build it</h2>
   <div class="c" style="margin-top:16px;overflow-x:auto">
     <table>
-      <tr><th>Stage</th><th>What</th><th>Technologies &amp; AI</th></tr>
-      <tr><td><b>1. See</b> ✓</td><td>Read the screen and the structure of the open window</td><td>Screen capture + Windows UI Automation (button names and positions)</td></tr>
-      <tr><td><b>2. Understand</b> ✓</td><td>Turn the question into a route of steps</td><td>Claude vision model, structured step plan</td></tr>
-      <tr><td><b>3. Point</b> ✓</td><td>Show each step with a cursor on the exact button</td><td>Transparent overlay; re-plans when the screen changes</td></tr>
-      <tr><td><b>4. Remember</b> ✓</td><td>Learn a route once, replay it instantly</td><td>Saved routes + company knowledge base, no AI call needed</td></tr>
-      <tr><td><b>5. Pilot → paid</b></td><td>Prove faster onboarding at U VENDOR, convert to a contract</td><td>Usage analytics: where employees get stuck</td></tr>
-      <tr><td><b>6. Private mode</b></td><td>Run on the client's own server</td><td>Fine-tuned local vision model</td></tr>
-      <tr><td><b>7. Scale</b></td><td>Sell through CRM/ERP integrators, then Kazakhstan</td><td>Ready-made guide packs per system</td></tr>
+      <tr><th>Stage</th><th>What</th><th>Technologies, tools &amp; AI</th></tr>
+      <tr><td><b>1. See</b> ✓</td><td>Read the screen and the structure of the open window</td><td>Screen capture + Windows UI Automation (names and positions of buttons)</td></tr>
+      <tr><td><b>2. Understand</b> ✓</td><td>Turn the question into a route of steps</td><td>Claude vision model gets the screenshot and the list of on-screen controls together and returns a structured step plan</td></tr>
+      <tr><td><b>3. Point</b> ✓</td><td>Show each step with a cursor on the exact button</td><td>Transparent overlay; each step is matched to a real control by name; re-plans when the screen changes</td></tr>
+      <tr><td><b>4. Remember</b> ✓</td><td>Learn a route once, replay it instantly</td><td>Saved routes + company knowledge base; repeated questions need no AI call</td></tr>
+      <tr><td><b>5. Pilot → paid</b> · now</td><td>Prove faster onboarding at U VENDOR, convert to a contract</td><td>Usage analytics: where employees get stuck</td></tr>
+      <tr><td><b>6. Private mode</b> · 2027</td><td>Run on the client's own server for sensitive data</td><td>Fine-tuned local vision model (planned)</td></tr>
+      <tr><td><b>7. Scale</b> · 2027</td><td>Sell through CRM/ERP integrators, then Kazakhstan</td><td>Ready-made guide packs per system</td></tr>
     </table>
   </div>
   <div class="g2" style="margin-top:16px">
-    <div class="c"><h3>Business model</h3><p>Subscription, target <b>~$200 per company per month</b>. On-premise option for data-sensitive clients. Price is being tested in pilots.</p></div>
-    <div class="c"><h3>Customers</h3><p>Teams of 50+ with high turnover: call centres, logistics, retail, delivery.</p></div>
+    <div class="c"><h3>Business model</h3><p>Subscription, target <b>~$200 per company per month</b>, with an on-premise option later for data-sensitive clients. Price is being tested in the pilot.</p></div>
+    <div class="c"><h3>Customers &amp; channel</h3><p>Teams of 50+ with high turnover: call centres, logistics, retail, delivery. Founder-led sales in Tashkent now, CRM/ERP integrators next.</p></div>
   </div>
 </div></section>
 
-<section><div class="w" style="text-align:center">
+<section id="demo-link"><div class="w" style="text-align:center">
+  <div class="n">06 · Demo</div>
   <h2>See it in action</h2>
-  <p style="color:var(--mut)">Demo video, description and working prototype</p>
-  <a class="big" href="/demo">Open demo →</a>
+  <p style="color:var(--mut)">1:46 demo video, its description and the working prototype</p>
+  <a class="big" href="/demo">Open demo page →</a>
+  <a class="big ghost" href="https://github.com/sajaboy15/scopos/releases/latest" target="_blank" rel="noopener">Download for Windows</a>
 </div></section>
 </div>
 
-  <section class="partners">
-    <div class="partners-inner">
-      <div class="partners-label">our partners</div>
-      <div class="partners-grid">
-        <div class="partner-card" data-url="https://www.uvendor.uz/">
-          <img src="assets/uvendor-logo.png" alt="U Vendor LLC" class="partner-logo">
-          <div class="partner-text">
-            <span class="partner-name">U VENDOR LLC</span>
-          </div>
-        </div>
-        <div class="partner-card" data-url="https://idrock.uz/">
-          <img src="assets/idrock-logo.png" alt="idrock accelerator" class="partner-logo">
-          <div class="partner-text">
-            <span class="partner-name">idrock accelerator</span>
-          </div>
-        </div>
-        <div class="partner-card" data-url="https://unclechill.uz/">
-          <img src="assets/unclechill-logo.png" alt="Uncle Chill" class="partner-logo">
-          <div class="partner-text">
-            <span class="partner-name">Uncle Chill</span>
-          </div>
-        </div>
-        <div class="partner-card" data-url="https://newuu.uz/">
-          <img src="assets/nuu-logo.png" alt="New Uzbekistan University" class="partner-logo">
-          <div class="partner-text">
-            <span class="partner-name">New Uzbekistan University</span>
-          </div>
-        </div>
-        <div class="partner-card" data-url="https://ipsilon.group/">
-          <img src="assets/ipsilon-logo.png" alt="Ipsilon Group" class="partner-logo">
-          <div class="partner-text">
-            <span class="partner-name">Ipsilon Group</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta" id="request-access">
-    <div class="contact-inner">
-      <h2>Get SCOPOS for your team</h2>
-      <p>Works seamlessly across multiple monitors. Tell us a bit about your team and we'll reach out.</p>
-      <form class="contact-form" id="requestForm">
-        <input type="email" name="email" placeholder="Your email" required>
-        <input type="text" name="company" placeholder="Company (optional)">
-        <input type="text" name="team_size" placeholder="Team size (optional)">
-        <input type="text" name="crm" placeholder="CRM you use (optional)">
-        <input type="hidden" name="_subject" value="New Request Access - SCOPOS website">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <button type="submit" class="btn-dark">Request Access</button>
-        <p class="contact-status" id="requestStatus"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- Contact -->
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="contact-label">get in touch</div>
@@ -1079,20 +997,6 @@
       observer.observe(row);
     });
 
-    // Add parallax effect to scattered images
-    document.addEventListener('mousemove', (e) => {
-      const scatters = document.querySelectorAll('.scatter');
-      const x = e.clientX / window.innerWidth;
-      const y = e.clientY / window.innerHeight;
-
-      scatters.forEach((scatter, index) => {
-        const speed = (index + 1) * 0.5;
-        const xMove = (x - 0.5) * speed * 20;
-        const yMove = (y - 0.5) * speed * 20;
-        scatter.style.transform = `translate(${xMove}px, ${yMove}px) rotate(${scatter.style.getPropertyValue('--r')})`;
-      });
-    });
-
     // Forms — submit to FormSubmit without leaving the page
     function wireForm(formId, statusId, successMessage) {
       const form = document.getElementById(formId);
@@ -1123,7 +1027,6 @@
       });
     }
 
-    wireForm('requestForm', 'requestStatus', "Thanks — we'll be in touch soon.");
     wireForm('contactForm', 'contactStatus', "Thanks — we'll reply by email soon.");
 
     document.querySelectorAll('.partner-card[data-url]').forEach((card) => {

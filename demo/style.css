@@ -36,3 +36,7 @@ section h2{font-size:28px;margin:0 0 6px}
 table{width:100%;border-collapse:collapse;font-size:15px}
 td,th{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 footer{padding:30px 0 50px;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+body{font-family:'Inter',-apple-system,sans-serif}
+h1,h2,h3,nav b{font-family:'Space Grotesk',sans-serif}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.g2{grid-template-columns:1fr}}

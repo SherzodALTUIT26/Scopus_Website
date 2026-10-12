@@ -4,18 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SCOPOS — Demo</title>
+<meta name="description" content="SCOPOS demo: a new employee asks a question and SCOPOS points the cursor at each click. 1:46 video, description and downloadable Windows prototype.">
+<meta property="og:title" content="SCOPOS — Demo">
+<meta property="og:description" content="1:46 demo video, description and downloadable Windows prototype.">
+<meta property="og:image" content="https://scopus-website.vercel.app/assets/scatter_chat_panel.png">
+<meta property="og:url" content="https://scopus-website.vercel.app/demo">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/demo/style.css">
 </head>
 <body>
 <nav><div class="w">
   <b>SCOPOS</b>
   <a href="/">← Back to site</a>
-  
-  <a class="btn" href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">GitHub</a>
+  <a class="btn" href="https://github.com/sajaboy15/scopos/releases/latest" target="_blank" rel="noopener">Download</a>
 </div></nav>
 
 <header class="w" style="padding-bottom:24px">
-  <span class="tag">/demo</span>
+  <span class="tag">06 · Demo</span>
   <h1 style="font-size:clamp(36px,7vw,60px)">Demo</h1>
 </header>
 
@@ -35,23 +45,37 @@
       <li><b>0:00 The problem.</b> Day one at a new job: a CRM full of menus. Every question interrupts a senior, and manuals never match the screen.</li>
       <li><b>0:26 Just ask.</b> The employee opens SCOPOS and types: "How do I create an invoice for a client?"</li>
       <li><b>0:32 Step by step.</b> SCOPOS reads the screen and the blue cursor points at each button in turn: Sales → Invoices → New invoice → choose client, add items, save. The employee clicks, SCOPOS follows the screen.</li>
-      <li><b>1:10 Result.</b> The invoice is done in 40 seconds without asking anyone. Routes SCOPOS has learned replay in 0.4 s.</li>
+      <li><b>1:10 Result.</b> The invoice is done in 40 seconds without asking anyone. Routes SCOPOS has already learned replay instantly.</li>
       <li><b>1:26 How it works.</b> Reads the interface → understands the question → points to the exact button. A coach, not a bot: the person always clicks.</li>
     </ol>
-    <p style="margin-top:12px;color:var(--mut)">The CRM in the video is a neutral mock-up. SCOPOS works on top of any Windows or web business software.</p>
+    <p style="margin-top:12px;color:var(--mut)">The CRM in the video is a neutral mock-up, so the demo is not tied to one vendor. The prototype is being tested on our pilot company's real CRM.</p>
   </div>
 </div></section>
 
 <section><div class="w">
   <div class="n">6.3 · Working prototype</div>
-  <h2>Source code</h2>
+  <h2>Try it on Windows</h2>
   <div class="c" style="margin-top:14px">
-    <p>Windows desktop app: Electron + React + TypeScript, Windows UI Automation, Claude vision.</p>
-    <p style="margin-top:10px"><a class="big" href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">github.com/sajaboy15/scopos →</a></p>
-    <p style="margin-top:6px;color:var(--mut)">The installer is available on request for the jury — <a href="/#request-access">Request Access</a>.</p>
+    <p>Windows 10/11 desktop app: Electron + React + TypeScript, Windows UI Automation, Claude vision.</p>
+    <p style="margin-top:10px">
+      <a class="big" href="https://github.com/sajaboy15/scopos/releases/latest" target="_blank" rel="noopener">Download for Windows →</a>
+      <a class="big ghost" href="https://github.com/sajaboy15/scopos" target="_blank" rel="noopener">Source code on GitHub</a>
+    </p>
+    <p style="margin-top:6px;color:var(--mut)">Install, open SCOPOS with its hotkey, and ask a question about the program on your screen.</p>
   </div>
 </div></section>
 
-<footer><div class="w">SCOPOS · SAJA BOYS · Pitch Day 3.0</div></footer>
+<section><div class="w">
+  <div class="n">Optional · AI assistant examples</div>
+  <h2>Example questions and answers</h2>
+  <div class="g2" style="margin-top:14px">
+    <div class="c"><h3>"How do I create an invoice for a client?"</h3><p>Steps with the cursor: Sales → Invoices → + New invoice → choose the client, add items → Save.</p></div>
+    <div class="c"><h3>"Where do I find a client's order history?"</h3><p>Steps with the cursor: Clients → search the client by name → open the card → Orders tab.</p></div>
+    <div class="c"><h3>"How do I change a deal's status?"</h3><p>Steps with the cursor: Deals → open the deal → Status dropdown → choose the new status → Save.</p></div>
+    <div class="c"><h3>"What does the Warehouse section do?"</h3><p>Text answer: it shows stock levels and incoming and outgoing goods; SCOPOS then offers to point to it on the screen.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="w">SCOPOS · Pitch Day 3.0 · <a href="/">scopus-website.vercel.app</a></div></footer>
 </body>
 </html>
